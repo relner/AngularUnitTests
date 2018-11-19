@@ -34,10 +34,9 @@ describe('CalcService', () => {
     const service: CalcService = TestBed.get(CalcService);
 
     service.sumAsyncObs(3, 2).subscribe(result => {
-      expect(result).toBe(6);
+      expect(result).toBe(5);
     })
     flush(); //remove all async
-
   }));
 
 });
