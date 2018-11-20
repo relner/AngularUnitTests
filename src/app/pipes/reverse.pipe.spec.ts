@@ -19,7 +19,7 @@ describe('ReversePipe', () => {
   });
 
   //My test 2
-  it('should trow an arror', () => {
+  it('should trow an error', () => {
     expect(() => {
       pipe.transform({ x: 5})
     }).toThrowError('ReversePipe: This is not a string');
