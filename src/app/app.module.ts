@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReversePipe } from './pipes/reverse.pipe';
+import { UserCardComponent } from './components/user-card/user-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReversePipe
+    ReversePipe,
+    UserCardComponent
   ],
   imports: [
     BrowserModule,

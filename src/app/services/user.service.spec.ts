@@ -9,6 +9,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 
 
 describe('UserService', () => {
+
   beforeEach(() => TestBed.configureTestingModule({
     imports: [HttpClientTestingModule] //Import module
   }));
@@ -17,7 +18,6 @@ describe('UserService', () => {
     const service: UserService = TestBed.get(UserService);
     expect(service).toBeTruthy();
   });
-
 
   //------------ Involved Method ------------------
   it('should get one user - Involved Method', inject([HttpTestingController], (backend: HttpTestingController) => {
