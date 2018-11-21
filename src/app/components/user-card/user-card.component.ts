@@ -9,6 +9,7 @@ import { UserService } from 'src/app/services/user.service';
 export class UserCardComponent implements OnInit {
 
   public user;
+  public users;
 
   constructor(private userService: UserService) { }
 
@@ -17,6 +18,10 @@ export class UserCardComponent implements OnInit {
 
   someMethod(){
     this.userService.getOne(1).subscribe( user => this.user = user);
+  }
+
+  someSecondMethod(){
+    this.userService.getAll().subscribe( users => this.users = users);
   }
 
 }

@@ -14,6 +14,9 @@ describe('UserCardComponent', () => {
   let spy: jasmine.Spy;
   let mockUser;
 
+  let mockListUsers;
+  let secondSpy: jasmine.Spy;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ UserCardComponent ],
@@ -27,11 +30,16 @@ describe('UserCardComponent', () => {
     fixture = TestBed.createComponent(UserCardComponent);
     component = fixture.componentInstance;
 
-    //-------------Start My imports---------
+    //-------Create Spy with One User---------
     mockUser = { name: 'Kris' }
     userService = fixture.debugElement.injector.get(UserService) //get user service
     spy = spyOn(userService, 'getOne').and.returnValue(of(mockUser));
-    //-------------Stop My imports---------
+
+
+    //-------Create Spy with List of User---------
+    mockListUsers = [{ name: 'Kris' }, { name: 'mike' }, { name: 'jane' }];
+    secondSpy = spyOn(userService, 'getAll').and.returnValue(of(mockListUsers));
+    
 
     fixture.detectChanges();
   });
@@ -40,8 +48,6 @@ describe('UserCardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  //My--------------------------
 
   it('should call userService', () => {
     component.someMethod();
@@ -58,6 +64,9 @@ describe('UserCardComponent', () => {
     expect(component.user).toEqual(mockUser);
   });
 
-
+  it('should call userService', () => {
+    component.someSecondMethod();
+    expect(secondSpy.calls.any()).toBeTruthy();
+  });
 
 });

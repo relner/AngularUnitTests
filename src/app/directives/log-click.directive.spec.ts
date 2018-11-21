@@ -31,7 +31,6 @@ describe('LogClickDirective', () => {
     expect(directive).toBeTruthy();
   });
 
-  //My Test-------------------
   it('should log click', () => {
     
     const div = fixture.nativeElement.querySelector('div');
