@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ReversePipe } from './pipes/reverse.pipe';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { LogClickDirective } from './directives/log-click.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LogClickDirective } from './directives/log-click.directive';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
